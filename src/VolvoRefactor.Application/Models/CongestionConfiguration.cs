@@ -2,8 +2,9 @@
 
 namespace VolvoRefactor.Application.Models
 {
-    public class CongestionParameters
+    public class CongestionConfiguration
     {
+        public string City { get; set; }
         public int MaxDailyFee { get; set; }
 
         public IList<CongestionIntervalCost> CongestionIntervalCosts { get; set; }

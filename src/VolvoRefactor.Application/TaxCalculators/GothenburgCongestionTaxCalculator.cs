@@ -8,9 +8,10 @@ namespace VolvoRefactor.Application.TaxCalculators
     {
         public GothenburgCongestionTaxCalculator()
         {
-            City = "Gothenburg";
-            CongestionParameters = new CongestionParameters
+            Name = "Gothenburg";
+            CongestionParameters = new CongestionConfiguration
             {
+                City = Name,
                 MaxDailyFee = 60,
                 CongestionIntervalCosts = new List<CongestionIntervalCost>()
                 {
