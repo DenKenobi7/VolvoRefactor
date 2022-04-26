@@ -1,4 +1,5 @@
 using System;
+using VolvoRefactor.Application.Models;
 
 namespace VolvoRefactor.WebApi {
     public class CongestionTaxCalculator {
@@ -34,7 +35,7 @@ namespace VolvoRefactor.WebApi {
 
         private bool IsTollFreeVehicle(Vehicle vehicle) {
             if (vehicle == null) return false;
-            String vehicleType = vehicle.GetVehicleType();
+            String vehicleType = "";
             return vehicleType.Equals(TollFreeVehicles.Motorcycle.ToString()) ||
                    vehicleType.Equals(TollFreeVehicles.Tractor.ToString()) ||
                    vehicleType.Equals(TollFreeVehicles.Emergency.ToString()) ||

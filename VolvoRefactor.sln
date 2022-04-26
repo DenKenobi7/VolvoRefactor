@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{78AFACD9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoRefactor.WebApi", "src\VolvoRefactor.WebApi\VolvoRefactor.WebApi.csproj", "{428CD8D9-F674-4C75-A822-C16380C3F7DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoRefactor.Application", "src\VolvoRefactor.Application\VolvoRefactor.Application.csproj", "{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{428CD8D9-F674-4C75-A822-C16380C3F7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428CD8D9-F674-4C75-A822-C16380C3F7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428CD8D9-F674-4C75-A822-C16380C3F7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{428CD8D9-F674-4C75-A822-C16380C3F7DF} = {0E1DC4B5-A013-4EF8-9667-1E948AC0DEBE}
+		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC} = {0E1DC4B5-A013-4EF8-9667-1E948AC0DEBE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBDB4FF4-D61B-42AC-8CDC-DE6F09215356}
