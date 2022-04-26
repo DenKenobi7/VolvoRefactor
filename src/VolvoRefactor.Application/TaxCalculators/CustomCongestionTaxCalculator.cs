@@ -12,7 +12,8 @@ namespace VolvoRefactor.Application.TaxCalculators
         public CustomCongestionTaxCalculator(CongestionConfiguration config)
         {
             Name = "Custom";
-            CongestionParameters = config;
+            CongestionConfiguration = config;
+            SetTaxRuleChain();
         }
     }
 }

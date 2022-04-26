@@ -5,31 +5,26 @@ namespace VolvoRefactor.Application.TaxRules
 {
     public class SingleChargeRule : BaseTaxRule
     {
-        private TaxInterval _taxInterval;
-        public SingleChargeRule(TaxInterval taxInterval)
+        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
         {
-            _taxInterval = taxInterval;
-        }
-        public override void GetTax(DateTime date, ref int totalFee)
-        {
-            var minutes = (date - _taxInterval.StartTime).TotalMinutes;
+            var minutes = (date - interval.StartTime).TotalMinutes;
 
             int totalSumBeforeCharging = totalFee;
-            NextRule.GetTax(date, ref totalFee);
+            NextRule.GetTax(date, vehicle, interval, ref totalFee);
             int fee = totalFee - totalSumBeforeCharging;
 
             if (minutes >= 60)
             {
-                totalFee += _taxInterval.MaxFee;
-                _taxInterval.MaxFee = 0;
-                _taxInterval.StartTime = date;
+                totalFee += interval.MaxFee;
+                interval.MaxFee = 0;
+                interval.StartTime = date;
             }
 
-            _taxInterval.MaxFee = Math.Max(fee, _taxInterval.MaxFee);
+            interval.MaxFee = Math.Max(fee, interval.MaxFee);
 
-            if (_taxInterval.EndTime == date)
+            if (interval.EndTime == date)
             {
-                totalFee += _taxInterval.MaxFee;
+                totalFee += interval.MaxFee;
             }
 
             return;

@@ -10,7 +10,7 @@ namespace VolvoRefactor.Application.TaxRules
         {
             _holidaysSet = holidaysSet;
         }
-        public override void GetTax(DateTime date, ref int totalFee)
+        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
         {
             if (IsTaxFreeMonth(date) ||
                 IsTaxFreeDayOfWeek(date) ||
@@ -19,7 +19,7 @@ namespace VolvoRefactor.Application.TaxRules
                 totalFee = 0;
                 return;
             }
-            NextRule.GetTax(date, ref totalFee);
+            NextRule.GetTax(date, vehicle, interval, ref totalFee);
         }
         private bool IsTaxFreeMonth(DateTime date) => _holidaysSet.Months.Contains(date.Month);
         private bool IsTaxFreeDayOfWeek(DateTime date) => _holidaysSet.DaysOfWeek.Contains(date.DayOfWeek.ToString());

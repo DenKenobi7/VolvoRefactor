@@ -9,7 +9,7 @@ namespace VolvoRefactor.Application.TaxCalculators
         public GothenburgCongestionTaxCalculator()
         {
             Name = "Gothenburg";
-            CongestionParameters = new CongestionConfiguration
+            CongestionConfiguration = new CongestionConfiguration
             {
                 City = Name,
                 MaxDailyFee = 60,
@@ -57,6 +57,7 @@ namespace VolvoRefactor.Application.TaxCalculators
                     }
                 }
             };
+            SetTaxRuleChain();
         }
 
     }

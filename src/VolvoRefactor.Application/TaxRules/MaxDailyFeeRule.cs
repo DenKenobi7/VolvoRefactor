@@ -1,4 +1,5 @@
 ﻿using System;
+using VolvoRefactor.Application.Models;
 
 namespace VolvoRefactor.Application.TaxRules
 {
@@ -10,9 +11,9 @@ namespace VolvoRefactor.Application.TaxRules
             _maxDailyFee = maxDailyFee;
         }
 
-        public override void GetTax(DateTime date, ref int totalFee)
+        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
         {
-            NextRule.GetTax(date, ref totalFee);
+            NextRule.GetTax(date, vehicle, interval, ref totalFee);
             if (totalFee > _maxDailyFee)
             {
                 totalFee = _maxDailyFee;

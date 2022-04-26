@@ -1,4 +1,5 @@
 ﻿using System;
+using VolvoRefactor.Application.Helpers;
 
 namespace VolvoRefactor.Application.Models
 {
@@ -9,14 +10,8 @@ namespace VolvoRefactor.Application.Models
         public int Fee { get; private set; }
         public CongestionIntervalCost(string startTime, string endTime, int fee)
         {
-            StartTime = DateTime.ParseExact(startTime, @"HH:mm", null);
-            EndTime = DateTime.ParseExact(endTime, @"HH:mm", null);
-            Fee = fee;
-        }
-        public CongestionIntervalCost(DateTime startTime, DateTime endTime, int fee)
-        {
-            StartTime = startTime;
-            EndTime = endTime;
+            StartTime = DateHelper.TimeFromString(startTime);
+            EndTime = DateHelper.TimeFromString(endTime);
             Fee = fee;
         }
     }
