@@ -2,7 +2,7 @@
 
 namespace VolvoRefactor.Application.Models
 {
-    internal class TaxInterval
+    public class TaxInterval
     {
         public TaxInterval(string startTime, string endTime, int maxFee)
         {
@@ -17,8 +17,8 @@ namespace VolvoRefactor.Application.Models
             MaxFee = maxFee;
         }
 
-        public DateTime StartTime { get; private set; }
+        public DateTime StartTime { get; set; }
         public DateTime EndTime { get; private set; }
-        public int MaxFee { get; private set; }
+        public int MaxFee { get; set; }
     }
 }
