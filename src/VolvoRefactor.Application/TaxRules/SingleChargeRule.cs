@@ -17,6 +17,7 @@ namespace VolvoRefactor.Application.TaxRules
             int totalSumBeforeCharging = totalFee;
             NextRule.GetTax(date, vehicle, interval, ref totalFee);
             int fee = totalFee - totalSumBeforeCharging;
+            totalFee = totalSumBeforeCharging;
 
             if (minutes >= _singleChargeTime)
             {

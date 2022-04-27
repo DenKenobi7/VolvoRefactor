@@ -13,7 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VolvoRefactor.Application.DataProviders;
 
-namespace VovlvoRefactor.WebApi {
+namespace VolvoRefactor.WebApi {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
@@ -27,7 +27,7 @@ namespace VovlvoRefactor.WebApi {
             services.AddControllers();
             services.AddScoped<ITaxConfigurationProvider, TaxConfigurationProvider>();
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VovlvoRefactor.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VolvoRefactor.WebApi", Version = "v1" });
             });
         }
 
@@ -36,7 +36,7 @@ namespace VovlvoRefactor.WebApi {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VovlvoRefactor.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VolvoRefactor.WebApi v1"));
             }
 
             app.UseHttpsRedirection();

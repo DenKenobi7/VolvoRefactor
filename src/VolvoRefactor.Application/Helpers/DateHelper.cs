@@ -6,7 +6,7 @@ namespace VolvoRefactor.Application.Helpers
     {
         public static DateTime DateFromString(string input)
         {
-            return DateTime.ParseExact(input, @"dd.MM", null);
+            return DateTime.ParseExact(input, @"dd.MM.yyyy", null);
         }
         public static DateTime TimeFromString(string input)
         {

@@ -25,8 +25,8 @@ namespace VolvoRefactor.Application.TaxRules
         private bool IsTaxFreeDayOfWeek(DateTime date) => _holidaysSet.DaysOfWeek.Contains(date.DayOfWeek.ToString());
         private bool IsTaxFreeHolidayOrDayBeforeHoliday(DateTime date)
         {
-            return _holidaysSet.HolidayDates.Contains(date) ||
-                   _holidaysSet.HolidayDates.Contains(date.AddDays(1));
+            return _holidaysSet.HolidayDates.Contains(date.Date) ||
+                   _holidaysSet.HolidayDates.Contains(date.Date.AddDays(1));
         }
     }
 }

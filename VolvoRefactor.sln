@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E1DC4B5-A01
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{78AFACD9-7F8F-40D2-B46B-916E034FBDE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoRefactor.WebApi", "src\VolvoRefactor.WebApi\VolvoRefactor.WebApi.csproj", "{428CD8D9-F674-4C75-A822-C16380C3F7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoRefactor.WebApi", "src\VolvoRefactor.WebApi\VolvoRefactor.WebApi.csproj", "{428CD8D9-F674-4C75-A822-C16380C3F7DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoRefactor.Application", "src\VolvoRefactor.Application\VolvoRefactor.Application.csproj", "{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoRefactor.Application", "src\VolvoRefactor.Application\VolvoRefactor.Application.csproj", "{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoRefactor.UnitTests", "tests\VolvoRefactor.UnitTests\VolvoRefactor.UnitTests.csproj", "{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{428CD8D9-F674-4C75-A822-C16380C3F7DF} = {0E1DC4B5-A013-4EF8-9667-1E948AC0DEBE}
 		{062BCB68-ADC2-4E99-9FD3-479A6F24FEAC} = {0E1DC4B5-A013-4EF8-9667-1E948AC0DEBE}
+		{289400F0-E1D1-4FDF-AAAE-17B7DF5E7E33} = {78AFACD9-7F8F-40D2-B46B-916E034FBDE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBDB4FF4-D61B-42AC-8CDC-DE6F09215356}

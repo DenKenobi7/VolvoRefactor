@@ -10,7 +10,7 @@ using VolvoRefactor.Application.Models;
 using VolvoRefactor.Application.TaxCalculators;
 using VolvoRefactor.WebApi.DTOs;
 
-namespace VovlvoRefactor.WebApi.Controllers
+namespace VolvoRefactor.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
