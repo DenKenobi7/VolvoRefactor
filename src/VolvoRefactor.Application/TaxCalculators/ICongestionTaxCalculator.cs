@@ -8,6 +8,6 @@ namespace VolvoRefactor.Application.TaxCalculators
     {
         string Name { get; set; }
         CongestionConfiguration CongestionConfiguration { get; init; }
-        int GetTax(Vehicle vehicle, DateTime[] dates);
+        int GetTax(Vehicle vehicle, List<DateTime> dates);
     }
 }

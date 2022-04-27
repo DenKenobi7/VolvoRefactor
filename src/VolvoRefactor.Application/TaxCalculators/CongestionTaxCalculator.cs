@@ -12,7 +12,7 @@ namespace VolvoRefactor.Application.TaxCalculators
         public string Name { get; set; }
         public CongestionConfiguration CongestionConfiguration { get; init; }
         public ITaxRule TaxRuleChain { get; set; }
-        public virtual int GetTax(Vehicle vehicle, DateTime[] dates)
+        public virtual int GetTax(Vehicle vehicle, List<DateTime> dates)
         {
             var totalFee = 0;
 

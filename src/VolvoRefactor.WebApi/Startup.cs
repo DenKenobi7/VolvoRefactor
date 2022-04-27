@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VolvoRefactor.Application.DataProviders;
 
 namespace VovlvoRefactor.WebApi {
     public class Startup {
@@ -24,6 +25,7 @@ namespace VovlvoRefactor.WebApi {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
+            services.AddScoped<ITaxConfigurationProvider, TaxConfigurationProvider>();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VovlvoRefactor.WebApi", Version = "v1" });
             });
