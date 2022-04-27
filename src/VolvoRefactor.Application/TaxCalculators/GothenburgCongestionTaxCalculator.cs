@@ -13,7 +13,16 @@ namespace VolvoRefactor.Application.TaxCalculators
             {
                 City = Name,
                 MaxDailyFee = 60,
-                CongestionIntervalCosts = new List<CongestionIntervalCost>()
+                SingleChargeTime = 60,
+                TollFreeVehicles = new List<string>
+                {
+                    "Emergency",
+                    "Diplomat",
+                    "Military",
+                    "Foreign",
+                    "Motorbike"
+                },
+                CongestionIntervalCosts = new List<CongestionIntervalCost>
                 {
                     new("06:00","06:30",8),
                     new("06:30","07:00",13),

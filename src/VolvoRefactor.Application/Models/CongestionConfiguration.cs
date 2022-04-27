@@ -7,6 +7,8 @@ namespace VolvoRefactor.Application.Models
         public string City { get; set; }
         public int MaxDailyFee { get; set; }
 
+        public int SingleChargeTime { get; set; }
+
         public IList<string> TollFreeVehicles { get; set; }
 
         public IList<CongestionIntervalCost> CongestionIntervalCosts { get; set; }

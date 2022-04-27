@@ -1,8 +1,10 @@
-﻿namespace VolvoRefactor.Application.Models
+﻿using System;
+
+namespace VolvoRefactor.Application.Models
 {
     public class Vehicle
     {
-        public enum CarType
+        public enum TransportType
         {
             Car = 0,
             Emergency = 1,
@@ -11,6 +13,10 @@
             Foreign = 4,
             Motorbike = 5
         }
-        public CarType VehicleType { get; init; }
+        public TransportType VehicleType { get; init; }
+        public Vehicle(string type)
+        {
+            VehicleType = (TransportType)Enum.Parse(typeof(TransportType), type);
+        }
     }
 }

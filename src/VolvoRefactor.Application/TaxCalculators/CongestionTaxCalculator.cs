@@ -12,7 +12,7 @@ namespace VolvoRefactor.Application.TaxCalculators
         public string Name { get; set; }
         public CongestionConfiguration CongestionConfiguration { get; init; }
         public ITaxRule TaxRuleChain { get; set; }
-        public virtual int GetTax(Vehicle vehicle, List<DateTime> dates)
+        public virtual int GetTax(Vehicle vehicle, DateTime[] dates)
         {
             var totalFee = 0;
 
@@ -32,7 +32,7 @@ namespace VolvoRefactor.Application.TaxCalculators
                 new TollFreeVehicleRule(CongestionConfiguration.TollFreeVehicles),
                 new HolidayRule(CongestionConfiguration.HolidaysSet),
                 new MaxDailyFeeRule(CongestionConfiguration.MaxDailyFee),
-                new SingleChargeRule(),
+                new SingleChargeRule(CongestionConfiguration.SingleChargeTime),
                 new HourTaxRule(CongestionConfiguration.CongestionIntervalCosts)
             };
             TaxRuleChain = taxRules.ChainRules();
