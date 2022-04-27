@@ -5,14 +5,15 @@ namespace VolvoRefactor.Application.Models
 {
     public class CongestionIntervalCost
     {
-        public DateTime StartTime { get; private set; }
-        public DateTime EndTime { get; private set; }
-        public int Fee { get; private set; }
+        public DateTime StartTime { get; init; }
+        public DateTime EndTime { get; init; }
+        public int Fee { get; init; }
         public CongestionIntervalCost(string startTime, string endTime, int fee)
         {
             StartTime = DateHelper.TimeFromString(startTime);
             EndTime = DateHelper.TimeFromString(endTime);
             Fee = fee;
         }
+        public CongestionIntervalCost() { }
     }
 }
