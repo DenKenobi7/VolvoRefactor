@@ -10,14 +10,11 @@ namespace VolvoRefactor.Application.TaxRules
         {
             _singleChargeTime = singleChargeTime;
         }
-        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
+        public override int GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, int totalFee)
         {
             var minutes = (date - interval.StartTime).TotalMinutes;
 
-            int totalSumBeforeCharging = totalFee;
-            NextRule.GetTax(date, vehicle, interval, ref totalFee);
-            int fee = totalFee - totalSumBeforeCharging;
-            totalFee = totalSumBeforeCharging;
+            var fee = NextRule.GetTax(date, vehicle, interval, totalFee);
 
             if (minutes >= _singleChargeTime)
             {
@@ -33,7 +30,7 @@ namespace VolvoRefactor.Application.TaxRules
                 totalFee += interval.MaxFee;
             }
 
-            return;
+            return totalFee;
         }
     }
 }

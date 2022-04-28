@@ -12,14 +12,13 @@ namespace VolvoRefactor.Application.TaxRules
         {
             _tollFreeVehicles = tollFreeVehicles;
         }
-        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
+        public override int GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, int totalFee)
         {
             if (_tollFreeVehicles.Contains(vehicle.VehicleType.ToString()))
             {
-                totalFee = 0;
-                return;
+                return 0;
             }
-            NextRule.GetTax(date, vehicle, interval, ref totalFee);
+            return NextRule.GetTax(date, vehicle, interval, totalFee);
         }
     }
 }

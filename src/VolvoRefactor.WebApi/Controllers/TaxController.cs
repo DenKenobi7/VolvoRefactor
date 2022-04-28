@@ -30,19 +30,9 @@ namespace VolvoRefactor.WebApi.Controllers
             var taxCalculator = calculatorFactory.GetCalculatorByName(congestionTaxDTO.City);
 
             var vehicle = new Vehicle(congestionTaxDTO.VehicleType);
-            var totalTax = 0;
-            foreach (var dayChecpoints in SplitIntoDays(congestionTaxDTO.Dates))
-            {
-                totalTax += taxCalculator.GetTax(vehicle, dayChecpoints);
-            }
+            var totalTax = taxCalculator.GetTax(vehicle, congestionTaxDTO.Dates);
+            
             return totalTax;
-        }
-
-        private IEnumerable<List<DateTime>> SplitIntoDays(DateTime[] dates)
-        {
-            return dates.OrderBy(x => x)
-                        .GroupBy(x => x.Date)
-                        .Select(g => g.ToList());
         }
     }
 }

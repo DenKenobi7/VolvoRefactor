@@ -11,13 +11,14 @@ namespace VolvoRefactor.Application.TaxRules
             _maxDailyFee = maxDailyFee;
         }
 
-        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
+        public override int GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, int totalFee)
         {
-            NextRule.GetTax(date, vehicle, interval, ref totalFee);
+            totalFee += NextRule.GetTax(date, vehicle, interval, totalFee);
             if (totalFee > _maxDailyFee)
             {
                 totalFee = _maxDailyFee;
             }
+            return totalFee;
         }
     }
 }

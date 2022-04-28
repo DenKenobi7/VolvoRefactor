@@ -13,14 +13,14 @@ namespace VolvoRefactor.Application.TaxRules
         {
             _congestionIntervalCosts = congestionIntervalCosts;
         }
-        public override void GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, ref int totalFee)
+        public override int GetTax(DateTime date, Vehicle vehicle, TaxInterval interval, int totalFee)
         {
             var taxAmount = _congestionIntervalCosts
                 .FirstOrDefault(x => x.StartTime.TimeOfDay <= date.TimeOfDay && date.TimeOfDay <= x.EndTime.TimeOfDay);
 
             totalFee += taxAmount?.Fee ?? 0;
 
-            return;
+            return totalFee;
         }
     }
 }
