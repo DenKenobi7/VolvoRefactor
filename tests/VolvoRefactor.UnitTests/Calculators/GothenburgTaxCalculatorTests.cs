@@ -36,10 +36,10 @@ namespace VolvoRefactor.UnitTests.Calculators
             _checkpoints = stringCheckpoints.GetDatesFromStrings();
         }
 
-
-
         [Theory]
         [InlineData("Motorbike")]
+        [InlineData("Military")]
+        [InlineData("Emergency")]
         public void GetTax_TollFreeVehicle_ReturnsZero(string vehicleType)
         {
             //Arrange
@@ -55,6 +55,9 @@ namespace VolvoRefactor.UnitTests.Calculators
 
         [Theory]
         [InlineData(13, "Car", "2013-12-04 08:20:00")]
+        [InlineData(18, "Car", "2013-12-05 07:28:50")]
+        [InlineData(8, "Other", "2013-12-04 18:20:00")]
+        [InlineData(0, "Car", "2013-12-04 20:20:00")]
         public void GetTax_NotTollFreeVehicle_ReturnsExpectedResult(int expectedResult, string vehicleType, params string[] dateStrings)
         {
             //Arrange
@@ -65,7 +68,22 @@ namespace VolvoRefactor.UnitTests.Calculators
             var result = _calculator.GetTax(vehicle, dates);
 
             //Assert
-            Assert.Equal(13, result);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Fact]
+        public void GetTax_UnknownVehicle_ReturnsResultForDefaultType()
+        {
+            //Arrange
+            var type = "UnknownType";
+            var dates = _checkpoints[^3..];
+            var vehicle = new Vehicle(type);
+
+            //Act
+            var result = _calculator.GetTax(vehicle, dates);
+
+            //Assert
+            Assert.Equal(8, result);
         }
     }
 }

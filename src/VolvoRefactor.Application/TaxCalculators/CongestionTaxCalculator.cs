@@ -23,7 +23,7 @@ namespace VolvoRefactor.Application.TaxCalculators
 
                 foreach (var checkpoint in dayChecpoints)
                 {
-                    dayFee += TaxRuleChain.GetTax(checkpoint, vehicle, interval, dayFee);
+                    dayFee = TaxRuleChain.GetTax(checkpoint, vehicle, interval, dayFee);
                 }
                 totalTax += dayFee;
             }

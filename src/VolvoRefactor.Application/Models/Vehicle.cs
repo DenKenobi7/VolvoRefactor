@@ -8,7 +8,7 @@ namespace VolvoRefactor.Application.Models
         {
             Other = 0,
             Car = 1,
-            Emergency = 1,
+            Emergency = 2,
             Diplomat = 3,
             Military = 4,
             Foreign = 5,
