@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VolvoRefactor.Application.Helpers;
 using VolvoRefactor.Application.Models;
 using VolvoRefactor.Application.TaxCalculators;
@@ -38,7 +35,7 @@ namespace VolvoRefactor.UnitTests.Factories
         public void GetCalculatorByName_ExistingCityCalculator_ReturnsAppropriateCalculator(Type expectedCalculatorType, string city)
         {
             //Arrange
-            
+
             //Act
             var result = _factory.GetCalculatorByName(city).GetType();
 

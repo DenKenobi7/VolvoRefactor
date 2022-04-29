@@ -17,10 +17,7 @@ namespace VolvoRefactor.Application.TaxRules
         {
             var taxAmount = _congestionIntervalCosts
                 .FirstOrDefault(x => x.StartTime.TimeOfDay <= date.TimeOfDay && date.TimeOfDay <= x.EndTime.TimeOfDay);
-
-            totalFee += taxAmount?.Fee ?? 0;
-
-            return totalFee;
+            return taxAmount?.Fee ?? 0;
         }
     }
 }

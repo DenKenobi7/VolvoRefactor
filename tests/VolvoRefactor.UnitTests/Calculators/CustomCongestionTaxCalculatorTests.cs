@@ -134,6 +134,8 @@ namespace VolvoRefactor.UnitTests.Calculators
 
         [Theory]
         [InlineData(18, "2013-01-02 14:50", "2013-01-02 15:09", "2013-01-02 15:49")]
+        [InlineData(26, "2013-09-05 12:50", "2013-09-05 15:20", "2013-09-05 16:19")]
+        [InlineData(39, "2013-09-05 12:50", "2013-09-05 15:20", "2013-09-05 16:19", "2013-09-05 17:20")]
         [InlineData(18 + 13, "2013-01-02 14:50", "2013-01-02 15:09", "2013-01-02 15:49", "2013-01-02 17:49")]
         public void GetTax_CheckpointsAreUnderSingleChargeRule_ApplyTaxFeeOnlyOncePerInterval(int expectedResult, params string[] dateStrings)
         {

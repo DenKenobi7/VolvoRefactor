@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using VolvoRefactor.Application.DataProviders;
 using VolvoRefactor.Application.Models;
@@ -31,7 +26,7 @@ namespace VolvoRefactor.WebApi.Controllers
 
             var vehicle = new Vehicle(congestionTaxDTO.VehicleType);
             var totalTax = taxCalculator.GetTax(vehicle, congestionTaxDTO.Dates);
-            
+
             return totalTax;
         }
     }
